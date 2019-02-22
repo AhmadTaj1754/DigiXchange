@@ -5,7 +5,7 @@ from django.shortcuts import render,redirect
 from .forms import ContactForm
 
 
-
+#test
 
 def home_page(request):
     # print(request.session.get("first_name", "Unknown"))
