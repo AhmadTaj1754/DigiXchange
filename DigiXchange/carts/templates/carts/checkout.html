@@ -8,7 +8,7 @@
         <p class='lead'>Login</p>
         {% include 'accounts/snippets/form.html' with form=login_form next_url=request.build_absolute_uri %}
     </div>
-    <div class='col-12 col-md-6'> 
+    <div class='col-12 col-md-6'>
         Continue as Guest
 
         {% url "guest_register" as guest_register_url %}
