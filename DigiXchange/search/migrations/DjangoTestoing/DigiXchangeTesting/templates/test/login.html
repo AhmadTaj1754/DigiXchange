@@ -1,0 +1,14 @@
+{% load static%}
+
+<div class="container">
+<form method="post"> {% csrf_token %}
+
+
+  {{title}}
+  <br>
+  <br>
+  <br>
+    {{form}}
+    <button type="submit" name="login" class="btn btn-default">Submit</button>
+  </form>
+</div>
