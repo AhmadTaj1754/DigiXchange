@@ -42,3 +42,44 @@ class RegisterForm(forms.Form):
             raise forms.ValidationError("Passwords must match.")
         return data
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# endbl

@@ -5,13 +5,15 @@
 {% url 'logout' as logout_url %}
 {% url 'register' as register_url %}
 {% url 'cart:home' as cart_url %}
+{% url 'encrypt' as encyrpt_url %}
+{% url 'decrypt' as decrypt_url %}
 {% load static %}
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
    <div class='container'>
   <a class="navbar-brand" href="{{ home_url }}">
     <img src="{% static 'img/beach.jpg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
-    {% if brand_name %} {{brand_name }} {% else %}CFE DigiXchange {% endif %}
+    {% if brand_name %} {{brand_name }} {% else %}DigiXchange {% endif %}
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -28,7 +30,12 @@
       <li class="nav-item {% if request.path == product_list_url %}active{% endif %}">
         <a class="nav-link" href="{{ product_list_url }}">Products</a>
       </li>
-
+      <li class="nav-item {% if request.path == encrypt_url %}active{% endif %} ">
+          <a class="nav-link" href="{{ encyrpt_url }}">Encyrpt</a>
+      </li>
+      <li class="nav-item {% if request.path == decrypt_url %}active{% endif %} ">
+          <a class="nav-link" href="{{ decrypt_url }}">Decrypt</a>
+      </li>
 
       {% if request.user.is_authenticated %}
        <li class="nav-item {% if request.path == logout_url %}active{% endif %}">

@@ -25,7 +25,7 @@ from django.views.generic import TemplateView
 
 from accounts.views import login_page, register_page, guest_register_view
 from addresses.views import checkout_address_create_view, checkout_address_reuse_view
-from .views import home_page, about_page, contact_page
+from .views import home_page, about_page, contact_page, encrypt, decrypt 
 
 urlpatterns = [
     url(r'^$', home_page, name='home'),
@@ -42,9 +42,58 @@ urlpatterns = [
     url(r'^products/', include("products.urls", namespace='products')),
     url(r'^search/', include("search.urls", namespace='search')),
     url(r'^admin/', admin.site.urls),
+
+    url(r'^encrypt/', encrypt, name='encrypt'),
+    url(r'^decrypt/', decrypt, name='decrypt'),
+
 ]
 
 
 if settings.DEBUG:
     urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#end
