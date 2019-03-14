@@ -26,6 +26,7 @@ class ProductFeaturedDetailView(DetailView):
 
 
 
+
 class ProductListView(ListView):
     template_name = "products/list.html"
 
