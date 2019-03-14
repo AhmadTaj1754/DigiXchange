@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate, login, get_user_model
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
 
+from django.views import View
+
 from .forms import ContactForm
 from .forms import EncryptForm
 from .forms import DecryptForm
