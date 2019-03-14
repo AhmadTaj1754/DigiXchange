@@ -8,4 +8,7 @@ User Story: I can save my personal information
 
 User Story: I can save my credit card information
 
-User Story: I can view product details
+
+
+
+See the test website live @ https://ahmadtaj213.pythonanywhere.com
