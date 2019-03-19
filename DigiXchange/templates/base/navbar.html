@@ -30,12 +30,12 @@
       <li class="nav-item {% if request.path == product_list_url %}active{% endif %}">
         <a class="nav-link" href="{{ product_list_url }}">Products</a>
       </li>
-      <li class="nav-item {% if request.path == encrypt_url %}active{% endif %} ">
+      <!-- <li class="nav-item {% if request.path == encrypt_url %}active{% endif %} ">
           <a class="nav-link" href="{{ encyrpt_url }}">Encyrpt</a>
       </li>
       <li class="nav-item {% if request.path == decrypt_url %}active{% endif %} ">
           <a class="nav-link" href="{{ decrypt_url }}">Decrypt</a>
-      </li>
+      </li> -->
 
       {% if request.user.is_authenticated %}
        <li class="nav-item {% if request.path == logout_url %}active{% endif %}">

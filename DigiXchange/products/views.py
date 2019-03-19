@@ -27,6 +27,8 @@ class ProductFeaturedDetailView(DetailView):
 
 
 
+
+
 class ProductListView(ListView):
     template_name = "products/list.html"
 
@@ -40,11 +42,13 @@ class ProductListView(ListView):
         return Product.objects.all()
 
 
+
 def product_list_view(request):
     queryset = Product.objects.all()
     context = {
         'object_list': queryset
     }
+    print("using products")
     return render(request, "products/list.html", context)
 
 

@@ -1,7 +1,26 @@
 from django import forms
 from django.contrib.auth import get_user_model
 
+import re
+
 User = get_user_model()
+
+# secure password
+def valid_password(password):
+    valid=False
+    digit=re.findall("\d", password)
+    if not digit:
+        raise forms.ValidationError("Passwords must have at least one digit.")
+    special=re.findall("[!@#$%^&*-]", password)
+    if not special:
+        raise forms.ValidationError("Passwords must have at least one of the following special characters: !@#$%^&*")
+    passlength= len(password) > 10
+    print(passlength)
+    if not passlength:
+        raise forms.ValidationError("Passwords must have at 10 or more characters.")
+    valid=True
+    return valid
+
 
 class ContactForm(forms.Form):
     fullname = forms.CharField(
@@ -56,7 +75,8 @@ class EncryptForm(forms.Form):
         passwordconfrim = self.cleaned_data.get('passwordconfrim')
         if passwordconfrim != password:
             raise forms.ValidationError("Passwords do not match.")
-        return data
+        if valid_password(password):
+            return data
 
 class DecryptForm(forms.Form):
     path = forms.CharField(

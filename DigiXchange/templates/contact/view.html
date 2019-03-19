@@ -9,9 +9,11 @@
       <div class='container'>
       <div class='row'>
         <div class='col'>
-            <p>{{ content }}</p>
+
             <div class='col-sm-6 col-12'>
-            <form method='POST'> {% csrf_token %}
+
+                <p>{{ content }}</p>
+            <form method='POST' class="form-control"> {% csrf_token %}
               {{ form.as_p }}
               <button type='submit' class='btn btn-default'>Submit</button>
             </form>

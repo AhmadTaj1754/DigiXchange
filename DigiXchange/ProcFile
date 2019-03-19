@@ -1,1 +1,1 @@
-web: gunicorn DigiXchange.wsgi 
+web: gunicorn ecommerce.wsgi 
