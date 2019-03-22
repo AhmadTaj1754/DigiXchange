@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 SECRET_KEY = os.environ.get('SECRET_KEY', 'SOME+RANDOM+KEY(z9+3vnm(jb0u@&w68t#5_e8s9-lbfhv-')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.herokuapp.com', '.pythonanywhere.com', '127.0.0.1']
 
@@ -139,13 +139,27 @@ USE_L10N = True
 USE_TZ = True
 
 
+# # Broswer SECURITY
+# #protect against XXS attachs
+# SECURE_BROWSER_XSS_FILTER=True
+#
+# #Does not allow Broswer to guess the content type
+# SECURE_CONTENT_TYPE_NOSNIFF=True
+
+# #used to redirect all HTTP request through HTTPS *should turn off in local enviroment
+# SECURE_SSL_REDIRECT=True
+#
+
+
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static_my_proj"),
+    # os.path.join(BASE_DIR, "static_my_proj"),
     # "DigiXchange/static_cdn"
 
 
@@ -155,10 +169,10 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "static_root")
+STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn", "static_root")
 
 
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
+MEDIA_ROOT = os.path.join(BASE_DIR, "static_cdn", "media_root")
 
 
 

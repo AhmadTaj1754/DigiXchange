@@ -22,8 +22,10 @@ AWS_S3_FILE_OVERWRITE=False
 AWS_S3_HOST="s3.us-east-2.amazonaws.com"
 
 
-MEDIA_ROOT="https://s3.us-east-2.amazonaws.com/digixchange/media"
-STATIC_ROOT="https://s3.us-east-2.amazonaws.com/digixchange/static"
+# MEDIA_ROOT="https://s3.us-east-2.amazonaws.com/digixchange/media"
+# STATIC_ROOT="https://s3.us-east-2.amazonaws.com/digixchange/static"
+
+
 
 
 
