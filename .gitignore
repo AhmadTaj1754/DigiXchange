@@ -8,8 +8,8 @@ include/
 pip-selfcheck.json
 
 # Django related
-# DigiXchange/ecommerce/settings/local.py
-# DigiXchange/ecommerce/settings/local_ahmad.py
+# DigiXchange/digixchange/settings/local.py
+# DigiXchange/digixchange/settings/local_ahmad.py
 # static-cdn/  # any collected static files
 
 
@@ -112,3 +112,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+
+

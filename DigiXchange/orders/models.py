@@ -5,7 +5,7 @@ from django.db.models.signals import pre_save, post_save
 from addresses.models import Address
 from billing.models import BillingProfile
 from carts.models import Cart
-from ecommerce.utils import unique_order_id_generator
+from digixchange.utils import unique_order_id_generator
 
 ORDER_STATUS_CHOICES = (
     ('created', 'Created'),
@@ -18,16 +18,16 @@ class OrderManager(models.Manager):
     def new_or_get(self, billing_profile, cart_obj):
         created = False
         qs = self.get_queryset().filter(
-                billing_profile=billing_profile, 
-                cart=cart_obj, 
-                active=True, 
+                billing_profile=billing_profile,
+                cart=cart_obj,
+                active=True,
                 status='created'
             )
         if qs.count() == 1:
             obj = qs.first()
         else:
             obj = self.model.objects.create(
-                    billing_profile=billing_profile, 
+                    billing_profile=billing_profile,
                     cart=cart_obj)
             created = True
         return obj, created
@@ -108,4 +108,3 @@ def post_save_order(sender, instance, created, *args, **kwargs):
 
 
 post_save.connect(post_save_order, sender=Order)
-

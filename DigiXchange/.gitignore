@@ -1,1 +1,6 @@
 .py[cod]
+digixchange/aws/conf.py
+digixchange/settings/production.py
+digixchange/settings/local.py
+digixchange/settings/local_ahmad.py
+digixchange/settings/local_ahmad.py
